@@ -1,25 +1,21 @@
 "use client";
 
-import { FC } from "react";
-
 interface Props {
   onClose: () => void;
 }
 
-const ComingSoonModal: FC<Props> = ({ onClose }) => {
+export default function ComingSoonModal({ onClose }: Props) {
   return (
-    <div className="modal-backdrop">
+    <div className="modal-overlay">
       <div className="modal">
-        <h2>🚀 Coming Soon</h2>
+        <h2>🚧 System Design Arena</h2>
         <p>
-          The interactive system design arena is under active development.
-          You’ll soon be able to drag components, connect services, and test
-          your design under massive load.
+          Interactive drag & drop system design playground is coming soon.
+          You will be able to design, test, and break real systems.
         </p>
-        <button className="button" onClick={onClose}>Got it</button>
+
+        <button onClick={onClose}>Got it</button>
       </div>
     </div>
   );
-};
-
-export default ComingSoonModal;
+}

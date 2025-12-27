@@ -1,125 +1,259 @@
-/* Global styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0f172a;
-  color: white;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5e7eb;
 }
 
-/* Headings */
-h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
+/* =====================
+   LANDING PAGE
+===================== */
+
+.container {
+  min-height: 100vh;
+  padding: 60px 80px;
 }
 
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Buttons */
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-/* Hero Section */
+/* HERO */
 .hero {
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #1e293b, #334155);
-  border-radius: 12px;
-  margin-bottom: 40px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-}
-
-/* Cards */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  max-width: 700px;
   margin-bottom: 60px;
 }
 
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
 .card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 25px 30px;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background-color: #334155;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
 }
 
-/* Footer */
-footer {
-  padding: 20px;
-  text-align: center;
-  background-color: #1e293b;
-  color: #94a3b8;
-  border-top: 1px solid #334155;
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
-/* Modal overlay */
-.modal-backdrop {
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Modal box */
-.modal {
-  background-color: #1e293b;
-  border-radius: 16px;
-  padding: 30px 25px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.modal h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.modal p {
+.card p {
   font-size: 14px;
-  color: #cbd5e1;
-  margin-bottom: 20px;
+  color: #94a3b8;
+  margin-bottom: 16px;
 }
 
-.button {
-  background-color: #4f46e5;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
+.card span {
+  font-size: 14px;
+  color: #38bdf8;
+  font-weight: 600;
 }
 
-.button:hover {
-  background-color: #6366f1;
+/* FOOTER */
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =====================
+   ARENA PAGE
+===================== */
+
+.arena-container {
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+.arena-container h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 28px;
+}
+
+/* ARENA HEADER */
+.arena-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.back-btn {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* ACTIVE PALETTE ITEM */
+.palette-item.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5),
+              0 0 18px rgba(56, 189, 248, 0.35);
+}
+
+/* REMOVABLE NODE */
+.canvas-node.removable {
+  cursor: pointer;
+  position: relative;
+}
+
+.canvas-node.removable:hover {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+
+/* COMPONENT PALETTE */
+.palette {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.palette-item {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #334155;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.palette-item:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+/* DESIGN CANVAS */
+.canvas {
+  height: 340px;
+  border: 2px dashed #334155;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(2, 6, 23, 0.6);
+  margin-bottom: 32px;
+}
+
+.canvas-node {
+  background: linear-gradient(180deg, #020617, #020617);
+  border: 1px solid #38bdf8;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+  animation: nodePop 0.25s ease;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* TEST BUTTON */
+.test-btn {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  border: none;
+  color: #020617;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.test-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+.test-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* RESULT PANEL */
+.result {
+  margin-top: 32px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.result h2 {
+  margin-bottom: 12px;
+}
+
+.result p {
+  font-size: 15px;
+  color: #cbd5f5;
+  margin-bottom: 6px;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+
+@keyframes nodePop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
